@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 
 const app = express()
 
-let items = []
+const items = []
 
 app.set('view engine', 'ejs');
 
@@ -13,7 +13,7 @@ app.use(express.static("public"));
 app.get("/", function (req, res) {
     const today = new Date();
 
-    let options = {
+    const options = {
         weekday: "long",
         day: "numeric",
         month: "long"
@@ -28,7 +28,7 @@ app.get("/", function (req, res) {
 });
 
 app.post("/", function (req, res) {
-    let item = req.body.newItem;
+    const item = req.body.newItem;
 
     items.push(item)
 
